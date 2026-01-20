@@ -15,7 +15,12 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.CapabilityType;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
 import FrameworkRevision.PageObjects.LandingPage;
@@ -23,7 +28,7 @@ import resources.TestUtils;
 
 public class BaseTest {
 
-	private WebDriver driver;
+	private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	public LandingPage landingPage;
 	private static final String BROWSER_KEY = "browser";
 	private static final String PROXY_KEY = "proxy";
@@ -33,16 +38,18 @@ public class BaseTest {
 
 	public WebDriver initializeDriver() throws FileNotFoundException, IOException {
 
+		WebDriver localDriver;
+
 		String browser = System.getProperty(BROWSER_KEY) != null ? System.getProperty(BROWSER_KEY)
 				: TestUtils.getDataFromProperties(GLOBAL_PROPERTY, BROWSER_KEY);
 		browser = browser.toLowerCase();
 		boolean isHeadless = browser.contains("headless");
 		boolean isIncongnito = browser.contains("incognito");
-		
+
 		String downloadFilePath = TestUtils.userDir + File.separator + "downloads";
 
 		HashMap<String, Object> prefs = new HashMap<String, Object>();
-		prefs.put("download.default_directory", downloadFilePath );
+		prefs.put("download.default_directory", downloadFilePath);
 		prefs.put("download.prompt_for_download", false);
 
 		Proxy proxy = new Proxy();
@@ -50,56 +57,31 @@ public class BaseTest {
 		boolean isProxyNeeded = Boolean.valueOf(TestUtils.getDataFromProperties(GLOBAL_PROPERTY, PROXY_NEEDED_KEY));
 
 		if (browser.contains("chrome")) {
-			ChromeOptions options = new ChromeOptions();
-			options.setAcceptInsecureCerts(true);
-			options.setExperimentalOption("prefs", prefs);
-			if(isProxyNeeded)
-				options.setCapability(CapabilityType.PROXY,proxy);
-			if(isHeadless)
-				options.addArguments("headless");
-			if(isIncongnito)
-				options.addArguments("--incognito");
-			
-			driver = new ChromeDriver(options);
+			localDriver = new ChromeDriver(confirgureChrome(isHeadless, prefs));
 		} else if (browser.contains("edge")) {
-			EdgeOptions options = new EdgeOptions();
-			options.setAcceptInsecureCerts(true);
-			options.setExperimentalOption("prefs", prefs);
-			if(isProxyNeeded)
-				options.setCapability(CapabilityType.PROXY,proxy);
-			if(isHeadless)
-				options.addArguments("headless");
-			
-			driver = new EdgeDriver(options);
+
+			localDriver = new EdgeDriver(configureEdge(isHeadless, prefs));
 		} else if (browser.contains("firefox")) {
-			FirefoxOptions options = new FirefoxOptions();
-			options.setAcceptInsecureCerts(true);
-			options.addPreference("browser.download.folderList", 2);
-	        options.addPreference("browser.download.dir", downloadFilePath);
-	        options.addPreference("browser.download.manager.showWhenStarting", false);
-			if(isProxyNeeded)
-				options.setCapability(CapabilityType.PROXY,proxy);
-			if(isHeadless)
-				options.addArguments("headless");
-			
-			driver = new FirefoxDriver();
+			localDriver = new FirefoxDriver(configureFirefox(isHeadless, downloadFilePath));
 		} else {
 			throw new IllegalArgumentException("Unexpected Browser : " + browser);
 		}
 		if (!isHeadless) {
-			driver.manage().window().maximize();
+			localDriver.manage().window().maximize();
 		}
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		localDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-		return driver;
+		driver.set(localDriver);
+
+		return driver.get();
 
 	}
-	
-	@BeforeTest
+
+	@BeforeMethod
 	public LandingPage launchApplication() throws FileNotFoundException, IOException {
 		initializeDriver();
-		driver.get(TestUtils.getDataFromProperties(GLOBAL_PROPERTY, URL_KEY));
-		landingPage = new LandingPage(driver);
+		getDriver().get(TestUtils.getDataFromProperties(GLOBAL_PROPERTY, URL_KEY));
+		landingPage = new LandingPage(getDriver());
 		return landingPage;
 	}
 
@@ -109,13 +91,46 @@ public class BaseTest {
 		landingPage.login();
 	}
 
-	@AfterTest
+	@AfterMethod
 	public void tearDown() {
-			driver.quit();
+		getDriver().quit();
 	}
 
 	public WebDriver getDriver() {
-		return driver;
+		return driver.get();
 	}
+
+	public ChromeOptions confirgureChrome(boolean isHeadless, HashMap<String, Object> prefs) {
+		ChromeOptions options = new ChromeOptions();
+		options.setAcceptInsecureCerts(true);
+		options.setExperimentalOption("prefs", prefs);
+		if (isHeadless)
+			options.addArguments("headless");
+
+		return options;
+	}
+
+	public EdgeOptions configureEdge(boolean isHeadless, HashMap<String, Object> prefs) {
+		EdgeOptions options = new EdgeOptions();
+		options.setAcceptInsecureCerts(true);
+		options.setExperimentalOption("prefs", prefs);
+		if (isHeadless)
+			options.addArguments("headless");
+
+		return options;
+	}
+
+	public FirefoxOptions configureFirefox(boolean isHeadless, String downloadFilePath) {
+		FirefoxOptions options = new FirefoxOptions();
+		options.setAcceptInsecureCerts(true);
+		options.addPreference("browser.download.folderList", 2);
+		options.addPreference("browser.download.dir", downloadFilePath);
+		options.addPreference("browser.download.manager.showWhenStarting", false);
+		if (isHeadless)
+			options.addArguments("headless");
+
+		return options;
+	}
+	
 
 }

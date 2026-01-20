@@ -6,8 +6,10 @@
       <class name="FrameworkRevision.Tests.LoginTest">
         <methods>
           <include name="tearDown"/>
-          <include name="loginToApp" invocation-numbers="1 2"/>
+          <include name="loginToApp"/>
+          <include name="getTestName"/>
           <include name="launchApplication"/>
+          <include name="getClassName"/>
         </methods>
       </class> <!-- FrameworkRevision.Tests.LoginTest -->
     </classes>

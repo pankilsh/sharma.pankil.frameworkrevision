@@ -2,53 +2,53 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-19T23:11:15 IST" name="Default suite" finished-at="2026-01-19T23:11:40 IST" duration-ms="24843">
+  <suite started-at="2026-01-20T22:41:53 IST" name="Suite" finished-at="2026-01-20T22:42:03 IST" duration-ms="9505">
     <groups>
     </groups>
-    <test started-at="2026-01-19T23:11:15 IST" name="Default test" finished-at="2026-01-19T23:11:40 IST" duration-ms="24843">
-      <class name="FrameworkRevision.Tests.LoginTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:FrameworkRevision.Tests.LoginTest@5e5d171f]" started-at="2026-01-19T23:11:15 IST" name="launchApplication" finished-at="2026-01-19T23:11:20 IST" duration-ms="5446" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="loginToApp(java.util.HashMap)[pri:0, instance:FrameworkRevision.Tests.LoginTest@5e5d171f]" started-at="2026-01-19T23:11:20 IST" name="loginToApp" data-provider="loginDetails" finished-at="2026-01-19T23:11:27 IST" duration-ms="6204" status="PASS">
+    <test started-at="2026-01-20T22:41:53 IST" name="chrome" finished-at="2026-01-20T22:41:58 IST" duration-ms="4895">
+      <class name="FrameworkRevision.Tests.SubmitOrdersGrid">
+        <test-method signature="parallelTest(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrdersGrid@536dbea0]" started-at="2026-01-20T22:41:53 IST" name="parallelTest" finished-at="2026-01-20T22:41:58 IST" duration-ms="4845" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{userId=pankil@gmail.com, userPassword=Pass@12345}]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginToApp -->
-        <test-method signature="loginToApp(java.util.HashMap)[pri:0, instance:FrameworkRevision.Tests.LoginTest@5e5d171f]" started-at="2026-01-19T23:11:27 IST" name="loginToApp" data-provider="loginDetails" finished-at="2026-01-19T23:11:34 IST" duration-ms="7105" status="PASS">
+        </test-method> <!-- parallelTest -->
+      </class> <!-- FrameworkRevision.Tests.SubmitOrdersGrid -->
+    </test> <!-- chrome -->
+    <test started-at="2026-01-20T22:41:53 IST" name="edge" finished-at="2026-01-20T22:41:59 IST" duration-ms="5394">
+      <class name="FrameworkRevision.Tests.SubmitOrdersGrid">
+        <test-method signature="parallelTest(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrdersGrid@560348e6]" started-at="2026-01-20T22:41:53 IST" name="parallelTest" finished-at="2026-01-20T22:41:59 IST" duration-ms="5344" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{userId=pankil@gmail.com, userPassword=Pass@1234}]]>
+                <![CDATA[edge]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginToApp -->
-        <test-method signature="loginToApp(java.util.HashMap)[pri:0, instance:FrameworkRevision.Tests.LoginTest@5e5d171f]" started-at="2026-01-19T23:11:34 IST" name="loginToApp" data-provider="loginDetails" finished-at="2026-01-19T23:11:39 IST" duration-ms="5401" status="PASS">
+        </test-method> <!-- parallelTest -->
+      </class> <!-- FrameworkRevision.Tests.SubmitOrdersGrid -->
+    </test> <!-- edge -->
+    <test started-at="2026-01-20T22:41:53 IST" name="firefox" finished-at="2026-01-20T22:42:03 IST" duration-ms="9505">
+      <class name="FrameworkRevision.Tests.SubmitOrdersGrid">
+        <test-method signature="parallelTest(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrdersGrid@23202fce]" started-at="2026-01-20T22:41:53 IST" name="parallelTest" finished-at="2026-01-20T22:42:03 IST" duration-ms="9455" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{userId=pankil@gmail.com, userPassword=pass@12345}]]>
+                <![CDATA[firefox]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginToApp -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.LoginTest@5e5d171f]" started-at="2026-01-19T23:11:39 IST" name="tearDown" finished-at="2026-01-19T23:11:40 IST" duration-ms="330" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- FrameworkRevision.Tests.LoginTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- parallelTest -->
+      </class> <!-- FrameworkRevision.Tests.SubmitOrdersGrid -->
+    </test> <!-- firefox -->
+  </suite> <!-- Suite -->
 </testng-results>

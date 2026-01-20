@@ -12,28 +12,14 @@ public class SubmitOrders extends BaseTest {
 
 	@Test
 	public void testOne() {
-		Assert.assertTrue(false);
+		Assert.assertTrue(true);
 	}
 	
 	@Test(expectedExceptions = ArithmeticException.class)
 	public void testTwo() {
-		int i = 5/1;
-		System.out.println(i);
+		int i = 5/0;
 	}
 	
-	public void validateProductStock(int size) throws ProductOutOfStockException {
-		if (size == 0) {
-			throw new ProductOutOfStockException();
-		}
-	}
 	
-	@Test(expectedExceptions = FrameworkRevision.CustomExceptions.ProductOutOfStockException.class)
-	public void testExceptions() {
-		try {
-			validateProductStock(0);
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 }

@@ -10,7 +10,7 @@ import resources.TestUtils;
 
 public class LoginData {
 	
-	@DataProvider(name = "loginDetails")
+	@DataProvider(name = "loginDetails",parallel = true)
 	public Object[][] loginDetails() throws IOException{
 		return TestUtils.getDataFromJsonIntoObject("loginDetails");
 	}
