@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>DemoTest</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>5/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jan 20 22:39:43 IST 2026</td>
+<td>Started on:</td><td>Wed Jan 21 22:14:26 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>28 seconds (28714 ms)</td>
+<tr><td>Total time:</td><td>26 seconds (26280 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,50 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='FrameworkRevision.Tests.SubmitOrders.testOne()'><b>testOne</b><br>Test class: FrameworkRevision.Tests.SubmitOrders</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at FrameworkRevision.Tests.SubmitOrders.testOne(SubmitOrders.java:15)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 15 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace480989727", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace480989727'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at FrameworkRevision.Tests.SubmitOrders.testOne(SubmitOrders.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>0</td>
+<td>FrameworkRevision.Tests.SubmitOrders@2ca26d77</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,25 +120,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='FrameworkRevision.Tests.LoginTest.loginToApp()'><b>loginToApp</b><br>Test class: FrameworkRevision.Tests.LoginTest<br>Parameters: {userId=pankil@gmail.com, userPassword=Pass@1234}</td>
-<td></td>
-<td>0</td>
-<td>FrameworkRevision.Tests.LoginTest@7ba8c737</td></tr>
-<tr>
-<td title='FrameworkRevision.Tests.LoginTest.loginToApp()'><b>loginToApp</b><br>Test class: FrameworkRevision.Tests.LoginTest<br>Parameters: {userId=pankil@gmail.com, userPassword=pass@12345}</td>
-<td></td>
-<td>0</td>
-<td>FrameworkRevision.Tests.LoginTest@7ba8c737</td></tr>
-<tr>
-<td title='FrameworkRevision.Tests.SubmitOrders.testOne()'><b>testOne</b><br>Test class: FrameworkRevision.Tests.SubmitOrders</td>
-<td></td>
-<td>0</td>
-<td>FrameworkRevision.Tests.SubmitOrders@2415fc55</td></tr>
-<tr>
 <td title='FrameworkRevision.Tests.LoginTest.loginToApp()'><b>loginToApp</b><br>Test class: FrameworkRevision.Tests.LoginTest<br>Parameters: {userId=pankil@gmail.com, userPassword=Pass@12345}</td>
 <td></td>
 <td>0</td>
-<td>FrameworkRevision.Tests.LoginTest@7ba8c737</td></tr>
+<td>FrameworkRevision.Tests.LoginTest@93081b6</td></tr>
+<tr>
+<td title='FrameworkRevision.Tests.LoginTest.loginToApp()'><b>loginToApp</b><br>Test class: FrameworkRevision.Tests.LoginTest<br>Parameters: {userId=pankil@gmail.com, userPassword=Pass@1234}</td>
+<td></td>
+<td>0</td>
+<td>FrameworkRevision.Tests.LoginTest@93081b6</td></tr>
 <tr>
 <td title='FrameworkRevision.Tests.SubmitOrders.testTwo()'><b>testTwo</b><br>Test class: FrameworkRevision.Tests.SubmitOrders</td>
 <td><div><pre>java.lang.ArithmeticException: / by zero
@@ -104,8 +138,8 @@ function toggleAllBoxes() {
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace112797748", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace112797748'><pre>java.lang.ArithmeticException: / by zero
+... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1852836085", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1852836085'><pre>java.lang.ArithmeticException: / by zero
 	at FrameworkRevision.Tests.SubmitOrders.testTwo(SubmitOrders.java:20)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -125,7 +159,12 @@ function toggleAllBoxes() {
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 </pre></div></td>
 <td>0</td>
-<td>FrameworkRevision.Tests.SubmitOrders@2415fc55</td></tr>
+<td>FrameworkRevision.Tests.SubmitOrders@2ca26d77</td></tr>
+<tr>
+<td title='FrameworkRevision.Tests.LoginTest.loginToApp()'><b>loginToApp</b><br>Test class: FrameworkRevision.Tests.LoginTest<br>Parameters: {userId=pankil@gmail.com, userPassword=pass@12345}</td>
+<td></td>
+<td>0</td>
+<td>FrameworkRevision.Tests.LoginTest@93081b6</td></tr>
 </table><p>
 </body>
 </html>

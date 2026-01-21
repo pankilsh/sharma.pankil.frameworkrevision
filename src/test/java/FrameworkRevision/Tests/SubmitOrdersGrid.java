@@ -21,6 +21,7 @@ public class SubmitOrdersGrid extends BaseTestGrid {
 	@Parameters({"browserType"})
 	public void parallelTest(String browserType) throws InterruptedException, MalformedURLException, URISyntaxException {
 		launchApp(browserType);
-	}
+		Assert.assertTrue(false);
+		}
 
 }

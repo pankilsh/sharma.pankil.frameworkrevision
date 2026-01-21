@@ -17,7 +17,7 @@ import FrameworkRevision.PageObjects.LandingPage;
 
 public class BaseTestGrid {
 
-	WebDriver driver;
+	private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	LandingPage landingPage;
 
 	public enum BrowserType {
@@ -25,44 +25,53 @@ public class BaseTestGrid {
 	}
 
 	public void initializeGridDriver(String browserType) throws MalformedURLException, URISyntaxException {
-
+		WebDriver localdriver;
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setAcceptInsecureCerts(true);
 		capabilities.setBrowserName(browserType);
 
 		URL hubIp = new URI("http://192.168.1.41:4444").toURL();
 
-		driver = new RemoteWebDriver(capabilities);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.manage().window().maximize();
+		localdriver = new RemoteWebDriver(capabilities);
+		localdriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		localdriver.manage().window().maximize();
+		driver.set(localdriver);
 	}
 
 	public void initializeDriver(String browserType) {
 
+		WebDriver localDriver;
+		
 		switch (browserType) {
 		case "chrome": {
-			driver = new ChromeDriver();
+			localDriver = new ChromeDriver();
 			break;
 		}
 		case "edge": {
-			driver = new EdgeDriver();
+			localDriver = new EdgeDriver();
 			break;
 		}
 		case "firefox": {
-			driver = new FirefoxDriver();
+			localDriver = new FirefoxDriver();
 			break;
 		}
 		default:
 			throw new IllegalArgumentException("Unexpected Browser value: " + browserType);
 		}
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		localDriver.manage().window().maximize();
+		localDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
+		driver.set(localDriver);
 	}
 
 	public void launchApp(String browserType) throws InterruptedException, MalformedURLException, URISyntaxException {
 		initializeDriver(browserType);
-		driver.get("https://www.google.com");
-		driver.quit();
+		getDriver().get("https://www.google.com");
+		getDriver().quit();
+	}
+	
+	public WebDriver getDriver() {
+		return driver.get();
 	}
 
 }

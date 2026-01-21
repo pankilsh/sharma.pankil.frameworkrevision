@@ -12,7 +12,7 @@ public class SubmitOrders extends BaseTest {
 
 	@Test
 	public void testOne() {
-		Assert.assertTrue(true);
+		Assert.assertTrue(false);
 	}
 	
 	@Test(expectedExceptions = ArithmeticException.class)
