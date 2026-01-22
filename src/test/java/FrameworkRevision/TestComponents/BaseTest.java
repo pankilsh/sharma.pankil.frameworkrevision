@@ -22,6 +22,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import FrameworkRevision.PageObjects.LandingPage;
 import resources.TestUtils;
@@ -39,13 +41,19 @@ public class BaseTest {
 	
 	public LandingPage landingPage;
 	
-	public WebDriver initializeDriver() throws FileNotFoundException, IOException {
+	public WebDriver initializeDriver(String args) throws FileNotFoundException, IOException {
 
 		WebDriver localDriver;
+		String browser;
+		
+		if(args.equals("default")) {
+			browser = System.getProperty(BROWSER_KEY) != null ? System.getProperty(BROWSER_KEY)
+					: TestUtils.getDataFromProperties(GLOBAL_PROPERTY, BROWSER_KEY);
+			browser = browser.toLowerCase();
+		}else {
+			browser = args.toLowerCase();
+		}
 
-		String browser = System.getProperty(BROWSER_KEY) != null ? System.getProperty(BROWSER_KEY)
-				: TestUtils.getDataFromProperties(GLOBAL_PROPERTY, BROWSER_KEY);
-		browser = browser.toLowerCase();
 		boolean isHeadless = browser.contains("headless");
 		boolean isIncongnito = browser.contains("incognito");
 		
@@ -79,8 +87,9 @@ public class BaseTest {
 	}
 
 	@BeforeMethod
-	public LandingPage launchApplication() throws FileNotFoundException, IOException {
-		initializeDriver();
+	@Parameters({"browserType"})
+	public LandingPage launchApplication(@Optional("default") String browserType) throws FileNotFoundException, IOException {
+		initializeDriver(browserType);
 		getDriver().get(TestUtils.getDataFromProperties(GLOBAL_PROPERTY, URL_KEY));
 		landingPage = new LandingPage(getDriver());
 		return landingPage;

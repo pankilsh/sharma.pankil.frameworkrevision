@@ -9,38 +9,86 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">chrome</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">5,397</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">edge</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">5,028</td><td></td><td></td></tr>
-<tr><td><a href="#t2">firefox</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">7,700</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">0</th><th class="num">0</th><th class="num">0</th><th class="num attn">3</th><th class="num">18,125</th><th colspan="2"></th></tr>
+<tr><td><a href="#t0">edge</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">18,527</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">chrome</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">20,561</td><td></td><td></td></tr>
+<tr><td><a href="#t2">firefox</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">27,156</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">3</th><th class="num">0</th><th class="num">0</th><th class="num attn">6</th><th class="num">66,244</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">chrome &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">FrameworkRevision.Tests.SubmitOrdersGrid</td><td><a href="#m0">parallelTest</a></td><td rowspan="1">1769059156754</td><td rowspan="1">29</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">edge &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">FrameworkRevision.Tests.SubmitOrdersGrid</td><td><a href="#m1">parallelTest</a></td><td rowspan="1">1769059156765</td><td rowspan="1">18</td></tr></tbody>
-<tbody id="t2"><tr><th colspan="4">firefox &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">FrameworkRevision.Tests.SubmitOrdersGrid</td><td><a href="#m2">parallelTest</a></td><td rowspan="1">1769059159059</td><td rowspan="1">1</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">edge &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">FrameworkRevision.Tests.SubmitOrders</td><td><a href="#m0">parallelTest</a></td><td rowspan="1">1769095624984</td><td rowspan="1">26</td></tr><tr class="failedeven"><td><a href="#m1">testOne</a></td><td rowspan="1">1769095631947</td><td rowspan="1">1</td></tr><tr><th colspan="4">edge &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">FrameworkRevision.Tests.SubmitOrders</td><td><a href="#m2">testTwo</a></td><td rowspan="1">1769095637446</td><td rowspan="1">2</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">chrome &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">FrameworkRevision.Tests.SubmitOrders</td><td><a href="#m3">parallelTest</a></td><td rowspan="1">1769095626667</td><td rowspan="1">5</td></tr><tr class="failedeven"><td><a href="#m4">testOne</a></td><td rowspan="1">1769095634450</td><td rowspan="1">7</td></tr><tr><th colspan="4">chrome &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">FrameworkRevision.Tests.SubmitOrders</td><td><a href="#m5">testTwo</a></td><td rowspan="1">1769095639768</td><td rowspan="1">2</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">firefox &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">FrameworkRevision.Tests.SubmitOrders</td><td><a href="#m6">parallelTest</a></td><td rowspan="1">1769095628174</td><td rowspan="1">0</td></tr><tr class="failedeven"><td><a href="#m7">testOne</a></td><td rowspan="1">1769095637740</td><td rowspan="1">2</td></tr><tr><th colspan="4">firefox &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">FrameworkRevision.Tests.SubmitOrders</td><td><a href="#m8">testTwo</a></td><td rowspan="1">1769095645473</td><td rowspan="1">5</td></tr></tbody>
 </table>
-<h2>chrome</h2><h3 id="m0">FrameworkRevision.Tests.SubmitOrdersGrid#parallelTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at FrameworkRevision.Tests.SubmitOrdersGrid.parallelTest(SubmitOrdersGrid.java:22)
+<h2>edge</h2><h3 id="m0">FrameworkRevision.Tests.SubmitOrders#parallelTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at FrameworkRevision.Tests.SubmitOrders.parallelTest(SubmitOrders.java:29)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 ... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>edge</h2><h3 id="m1">FrameworkRevision.Tests.SubmitOrdersGrid#parallelTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at FrameworkRevision.Tests.SubmitOrdersGrid.parallelTest(SubmitOrdersGrid.java:22)
+<h3 id="m1">FrameworkRevision.Tests.SubmitOrders#testOne</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at FrameworkRevision.Tests.SubmitOrders.testOne(SubmitOrders.java:19)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 ... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>firefox</h2><h3 id="m2">FrameworkRevision.Tests.SubmitOrdersGrid#parallelTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at FrameworkRevision.Tests.SubmitOrdersGrid.parallelTest(SubmitOrdersGrid.java:22)
+<h3 id="m2">FrameworkRevision.Tests.SubmitOrders#testTwo</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">java.lang.ArithmeticException: / by zero
+	at FrameworkRevision.Tests.SubmitOrders.testTwo(SubmitOrders.java:24)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 15 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>chrome</h2><h3 id="m3">FrameworkRevision.Tests.SubmitOrders#parallelTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at FrameworkRevision.Tests.SubmitOrders.parallelTest(SubmitOrders.java:29)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 ... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">FrameworkRevision.Tests.SubmitOrders#testOne</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at FrameworkRevision.Tests.SubmitOrders.testOne(SubmitOrders.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">FrameworkRevision.Tests.SubmitOrders#testTwo</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">java.lang.ArithmeticException: / by zero
+	at FrameworkRevision.Tests.SubmitOrders.testTwo(SubmitOrders.java:24)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 15 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>firefox</h2><h3 id="m6">FrameworkRevision.Tests.SubmitOrders#parallelTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at FrameworkRevision.Tests.SubmitOrders.parallelTest(SubmitOrders.java:29)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">FrameworkRevision.Tests.SubmitOrders#testOne</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at FrameworkRevision.Tests.SubmitOrders.testOne(SubmitOrders.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">FrameworkRevision.Tests.SubmitOrders#testTwo</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">java.lang.ArithmeticException: / by zero
+	at FrameworkRevision.Tests.SubmitOrders.testTwo(SubmitOrders.java:24)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 15 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

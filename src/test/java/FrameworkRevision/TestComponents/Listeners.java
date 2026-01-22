@@ -10,12 +10,14 @@ import org.testng.ITestResult;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 
 import resources.TestUtils;
 
 public class Listeners extends BaseTest implements ITestListener {
 
 	private ExtentReports extent = ExtentReportsNG.getReportInstance();
+	private ExtentTest test;
 	private static ThreadLocal<ExtentTest> threadTest = new ThreadLocal<ExtentTest>();
 
 	public String getBrowserName() {
@@ -30,14 +32,18 @@ public class Listeners extends BaseTest implements ITestListener {
 	public void onTestStart(ITestResult result) {
 
 		ITestListener.super.onTestStart(result);
-		ExtentTest test = extent.createTest(result.getMethod().getMethodName());
+		String testName = result.getMethod().getMethodName() + " on " + getBrowserName();
+		//String testName = result.getMethod().getMethodName();
+		test = extent.createTest(testName);
 		threadTest.set(test);
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		ITestListener.super.onTestSuccess(result);
-		
+		getTestInstance().assignAuthor("Pankil");
+		getTestInstance().info(result.getTestContext().getName().toUpperCase());
+		//getTestInstance().assignCategory(result.getTestClass().toString());
 		getTestInstance().pass("This test is passed");
 	}
 
@@ -46,6 +52,11 @@ public class Listeners extends BaseTest implements ITestListener {
 
 		ITestListener.super.onTestFailure(result);
 
+		getTestInstance().assignAuthor("Pankil");
+		getTestInstance().info(result.getTestContext().getName().toUpperCase());
+		getTestInstance().warning("Warning Example");
+		getTestInstance().assignCategory("Test Category");
+		getTestInstance().log(Status.FAIL, "The test is failed");
 		getTestInstance().fail(result.getThrowable());
 
 		// try {
@@ -62,12 +73,14 @@ public class Listeners extends BaseTest implements ITestListener {
 		try {
 			getTestInstance().addScreenCaptureFromPath(TestUtils.getScreenshotAt(getDriver(), fileName));
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
+			getTestInstance().warning("Failed to capture screenshot");
 		}
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
+		getTestInstance().info("This test case is skipped");
 		getTestInstance().skip(result.getThrowable());
 		ITestListener.super.onTestSkipped(result);
 	}

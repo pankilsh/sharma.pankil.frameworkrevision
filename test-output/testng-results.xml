@@ -1,70 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="0" failed="3" skipped="0">
+<testng-results ignored="0" total="9" passed="3" failed="6" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-22T10:49:12 IST" name="Suite" finished-at="2026-01-22T10:49:20 IST" duration-ms="7700">
+  <suite started-at="2026-01-22T20:56:59 IST" name="Suite" finished-at="2026-01-22T20:57:26 IST" duration-ms="27156">
     <groups>
     </groups>
-    <test started-at="2026-01-22T10:49:12 IST" name="chrome" finished-at="2026-01-22T10:49:17 IST" duration-ms="5397">
-      <class name="FrameworkRevision.Tests.SubmitOrdersGrid">
-        <test-method is-config="true" signature="launchApp(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrdersGrid@638ef7ed]" started-at="2026-01-22T10:49:12 IST" name="launchApp" finished-at="2026-01-22T10:49:16 IST" duration-ms="4178" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method signature="parallelTest()[pri:0, instance:FrameworkRevision.Tests.SubmitOrdersGrid@638ef7ed]" started-at="2026-01-22T10:49:16 IST" name="parallelTest" finished-at="2026-01-22T10:49:16 IST" duration-ms="29" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1590)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at org.testng.Assert.assertTrue(Assert.java:67)
-at FrameworkRevision.Tests.SubmitOrdersGrid.parallelTest(SubmitOrdersGrid.java:22)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-at java.base/java.lang.Thread.run(Thread.java:1583)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- parallelTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrdersGrid@638ef7ed]" started-at="2026-01-22T10:49:17 IST" name="tearDown" finished-at="2026-01-22T10:49:17 IST" duration-ms="274" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- FrameworkRevision.Tests.SubmitOrdersGrid -->
-    </test> <!-- chrome -->
-    <test started-at="2026-01-22T10:49:12 IST" name="edge" finished-at="2026-01-22T10:49:17 IST" duration-ms="5028">
-      <class name="FrameworkRevision.Tests.SubmitOrdersGrid">
-        <test-method is-config="true" signature="launchApp(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrdersGrid@64e7619d]" started-at="2026-01-22T10:49:12 IST" name="launchApp" finished-at="2026-01-22T10:49:16 IST" duration-ms="4193" status="PASS">
+    <test started-at="2026-01-22T20:56:59 IST" name="edge" finished-at="2026-01-22T20:57:17 IST" duration-ms="18527">
+      <class name="FrameworkRevision.Tests.SubmitOrders">
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@2fba3fc4]" started-at="2026-01-22T20:56:59 IST" name="launchApplication" finished-at="2026-01-22T20:57:04 IST" duration-ms="5530" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -74,8 +17,8 @@ at java.base/java.lang.Thread.run(Thread.java:1583)
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method signature="parallelTest()[pri:0, instance:FrameworkRevision.Tests.SubmitOrdersGrid@64e7619d]" started-at="2026-01-22T10:49:16 IST" name="parallelTest" finished-at="2026-01-22T10:49:16 IST" duration-ms="18" status="FAIL">
+        </test-method> <!-- launchApplication -->
+        <test-method signature="parallelTest()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@2fba3fc4]" started-at="2026-01-22T20:57:04 IST" name="parallelTest" finished-at="2026-01-22T20:57:05 IST" duration-ms="26" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -86,7 +29,7 @@ at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1590)
 at org.testng.Assert.assertTrue(Assert.java:57)
 at org.testng.Assert.assertTrue(Assert.java:67)
-at FrameworkRevision.Tests.SubmitOrdersGrid.parallelTest(SubmitOrdersGrid.java:22)
+at FrameworkRevision.Tests.SubmitOrders.parallelTest(SubmitOrders.java:29)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -113,15 +56,276 @@ at java.base/java.lang.Thread.run(Thread.java:1583)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- parallelTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrdersGrid@64e7619d]" started-at="2026-01-22T10:49:17 IST" name="tearDown" finished-at="2026-01-22T10:49:17 IST" duration-ms="334" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@2fba3fc4]" started-at="2026-01-22T20:57:06 IST" name="tearDown" finished-at="2026-01-22T20:57:08 IST" duration-ms="2008" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- FrameworkRevision.Tests.SubmitOrdersGrid -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@2fba3fc4]" started-at="2026-01-22T20:57:08 IST" name="launchApplication" finished-at="2026-01-22T20:57:11 IST" duration-ms="3706" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="testOne()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@2fba3fc4]" started-at="2026-01-22T20:57:11 IST" name="testOne" finished-at="2026-01-22T20:57:11 IST" duration-ms="1" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at FrameworkRevision.Tests.SubmitOrders.testOne(SubmitOrders.java:19)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOne -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@2fba3fc4]" started-at="2026-01-22T20:57:12 IST" name="tearDown" finished-at="2026-01-22T20:57:12 IST" duration-ms="404" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@2fba3fc4]" started-at="2026-01-22T20:57:12 IST" name="launchApplication" finished-at="2026-01-22T20:57:17 IST" duration-ms="4555" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="testTwo()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@2fba3fc4]" started-at="2026-01-22T20:57:17 IST" name="testTwo" finished-at="2026-01-22T20:57:17 IST" duration-ms="2" status="PASS">
+          <exception class="java.lang.ArithmeticException">
+            <message>
+              <![CDATA[/ by zero]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.ArithmeticException: / by zero
+at FrameworkRevision.Tests.SubmitOrders.testTwo(SubmitOrders.java:24)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ArithmeticException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTwo -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@2fba3fc4]" started-at="2026-01-22T20:57:17 IST" name="tearDown" finished-at="2026-01-22T20:57:17 IST" duration-ms="490" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- FrameworkRevision.Tests.SubmitOrders -->
     </test> <!-- edge -->
-    <test started-at="2026-01-22T10:49:12 IST" name="firefox" finished-at="2026-01-22T10:49:20 IST" duration-ms="7700">
-      <class name="FrameworkRevision.Tests.SubmitOrdersGrid">
-        <test-method is-config="true" signature="launchApp(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrdersGrid@4fa1c212]" started-at="2026-01-22T10:49:12 IST" name="launchApp" finished-at="2026-01-22T10:49:19 IST" duration-ms="6487" status="PASS">
+    <test started-at="2026-01-22T20:56:59 IST" name="chrome" finished-at="2026-01-22T20:57:19 IST" duration-ms="20561">
+      <class name="FrameworkRevision.Tests.SubmitOrders">
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@478db956]" started-at="2026-01-22T20:56:59 IST" name="launchApplication" finished-at="2026-01-22T20:57:06 IST" duration-ms="7214" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="parallelTest()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@478db956]" started-at="2026-01-22T20:57:06 IST" name="parallelTest" finished-at="2026-01-22T20:57:06 IST" duration-ms="5" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at FrameworkRevision.Tests.SubmitOrders.parallelTest(SubmitOrders.java:29)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- parallelTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@478db956]" started-at="2026-01-22T20:57:07 IST" name="tearDown" finished-at="2026-01-22T20:57:07 IST" duration-ms="259" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@478db956]" started-at="2026-01-22T20:57:07 IST" name="launchApplication" finished-at="2026-01-22T20:57:14 IST" duration-ms="6531" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="testOne()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@478db956]" started-at="2026-01-22T20:57:14 IST" name="testOne" finished-at="2026-01-22T20:57:14 IST" duration-ms="7" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at FrameworkRevision.Tests.SubmitOrders.testOne(SubmitOrders.java:19)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOne -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@478db956]" started-at="2026-01-22T20:57:15 IST" name="tearDown" finished-at="2026-01-22T20:57:15 IST" duration-ms="326" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@478db956]" started-at="2026-01-22T20:57:15 IST" name="launchApplication" finished-at="2026-01-22T20:57:19 IST" duration-ms="3913" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="testTwo()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@478db956]" started-at="2026-01-22T20:57:19 IST" name="testTwo" finished-at="2026-01-22T20:57:19 IST" duration-ms="2" status="PASS">
+          <exception class="java.lang.ArithmeticException">
+            <message>
+              <![CDATA[/ by zero]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.ArithmeticException: / by zero
+at FrameworkRevision.Tests.SubmitOrders.testTwo(SubmitOrders.java:24)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ArithmeticException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTwo -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@478db956]" started-at="2026-01-22T20:57:19 IST" name="tearDown" finished-at="2026-01-22T20:57:19 IST" duration-ms="203" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- FrameworkRevision.Tests.SubmitOrders -->
+    </test> <!-- chrome -->
+    <test started-at="2026-01-22T20:56:59 IST" name="firefox" finished-at="2026-01-22T20:57:26 IST" duration-ms="27156">
+      <class name="FrameworkRevision.Tests.SubmitOrders">
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@420a85c4]" started-at="2026-01-22T20:56:59 IST" name="launchApplication" finished-at="2026-01-22T20:57:08 IST" duration-ms="8721" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -131,8 +335,8 @@ at java.base/java.lang.Thread.run(Thread.java:1583)
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method signature="parallelTest()[pri:0, instance:FrameworkRevision.Tests.SubmitOrdersGrid@4fa1c212]" started-at="2026-01-22T10:49:19 IST" name="parallelTest" finished-at="2026-01-22T10:49:19 IST" duration-ms="1" status="FAIL">
+        </test-method> <!-- launchApplication -->
+        <test-method signature="parallelTest()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@420a85c4]" started-at="2026-01-22T20:57:08 IST" name="parallelTest" finished-at="2026-01-22T20:57:08 IST" duration-ms="0" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -143,7 +347,7 @@ at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1590)
 at org.testng.Assert.assertTrue(Assert.java:57)
 at org.testng.Assert.assertTrue(Assert.java:67)
-at FrameworkRevision.Tests.SubmitOrdersGrid.parallelTest(SubmitOrdersGrid.java:22)
+at FrameworkRevision.Tests.SubmitOrders.parallelTest(SubmitOrders.java:29)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -170,11 +374,113 @@ at java.base/java.lang.Thread.run(Thread.java:1583)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- parallelTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrdersGrid@4fa1c212]" started-at="2026-01-22T10:49:19 IST" name="tearDown" finished-at="2026-01-22T10:49:20 IST" duration-ms="1057" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@420a85c4]" started-at="2026-01-22T20:57:08 IST" name="tearDown" finished-at="2026-01-22T20:57:10 IST" duration-ms="1992" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- FrameworkRevision.Tests.SubmitOrdersGrid -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@420a85c4]" started-at="2026-01-22T20:57:10 IST" name="launchApplication" finished-at="2026-01-22T20:57:17 IST" duration-ms="7089" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="testOne()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@420a85c4]" started-at="2026-01-22T20:57:17 IST" name="testOne" finished-at="2026-01-22T20:57:17 IST" duration-ms="2" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at FrameworkRevision.Tests.SubmitOrders.testOne(SubmitOrders.java:19)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOne -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@420a85c4]" started-at="2026-01-22T20:57:18 IST" name="tearDown" finished-at="2026-01-22T20:57:19 IST" duration-ms="1293" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@420a85c4]" started-at="2026-01-22T20:57:19 IST" name="launchApplication" finished-at="2026-01-22T20:57:25 IST" duration-ms="5828" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="testTwo()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@420a85c4]" started-at="2026-01-22T20:57:25 IST" name="testTwo" finished-at="2026-01-22T20:57:25 IST" duration-ms="5" status="PASS">
+          <exception class="java.lang.ArithmeticException">
+            <message>
+              <![CDATA[/ by zero]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.ArithmeticException: / by zero
+at FrameworkRevision.Tests.SubmitOrders.testTwo(SubmitOrders.java:24)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ArithmeticException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTwo -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@420a85c4]" started-at="2026-01-22T20:57:25 IST" name="tearDown" finished-at="2026-01-22T20:57:26 IST" duration-ms="1093" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- FrameworkRevision.Tests.SubmitOrders -->
     </test> <!-- firefox -->
   </suite> <!-- Suite -->
 </testng-results>

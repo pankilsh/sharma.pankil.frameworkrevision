@@ -2,6 +2,10 @@ package FrameworkRevision.Tests;
 
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
+
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -20,6 +24,9 @@ public class SubmitOrders extends BaseTest {
 		int i = 5/0;
 	}
 	
-	
+	@Test
+	public void parallelTest() throws InterruptedException, MalformedURLException, URISyntaxException {
+		Assert.assertTrue(false);
+		}
 
 }
