@@ -103,17 +103,17 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="FrameworkRevision.Tests.SubmitOrdersGrid" class="method navigator-link" hash-for-method="parallelTest(edge)">parallelTest(edge)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="FrameworkRevision.Tests.SubmitOrdersGrid" class="method navigator-link" hash-for-method="parallelTest">parallelTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="FrameworkRevision.Tests.SubmitOrdersGrid" class="method navigator-link" hash-for-method="parallelTest(chrome)">parallelTest(chrome)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="FrameworkRevision.Tests.SubmitOrdersGrid" class="method navigator-link" hash-for-method="parallelTest">parallelTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="FrameworkRevision.Tests.SubmitOrdersGrid" class="method navigator-link" hash-for-method="parallelTest(firefox)">parallelTest(firefox)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="FrameworkRevision.Tests.SubmitOrdersGrid" class="method navigator-link" hash-for-method="parallelTest">parallelTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -136,12 +136,11 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="parallelTest(edge)">
-                  </a> <!-- parallelTest(edge) -->
+                  <a name="parallelTest">
+                  </a> <!-- parallelTest -->
                   <span class="method-name">parallelTest</span>
-                  <span class="parameters">(edge)</span>
                   <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at FrameworkRevision.Tests.SubmitOrdersGrid.parallelTest(SubmitOrdersGrid.java:24)
+	at FrameworkRevision.Tests.SubmitOrdersGrid.parallelTest(SubmitOrdersGrid.java:22)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
@@ -153,12 +152,11 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="parallelTest(chrome)">
-                  </a> <!-- parallelTest(chrome) -->
+                  <a name="parallelTest">
+                  </a> <!-- parallelTest -->
                   <span class="method-name">parallelTest</span>
-                  <span class="parameters">(chrome)</span>
                   <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at FrameworkRevision.Tests.SubmitOrdersGrid.parallelTest(SubmitOrdersGrid.java:24)
+	at FrameworkRevision.Tests.SubmitOrdersGrid.parallelTest(SubmitOrdersGrid.java:22)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
@@ -170,12 +168,11 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="parallelTest(firefox)">
-                  </a> <!-- parallelTest(firefox) -->
+                  <a name="parallelTest">
+                  </a> <!-- parallelTest -->
                   <span class="method-name">parallelTest</span>
-                  <span class="parameters">(firefox)</span>
                   <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at FrameworkRevision.Tests.SubmitOrdersGrid.parallelTest(SubmitOrdersGrid.java:24)
+	at FrameworkRevision.Tests.SubmitOrdersGrid.parallelTest(SubmitOrdersGrid.java:22)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
@@ -196,23 +193,23 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite parallel=&quot;tests&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+&lt;suite thread-count=&quot;3&quot; parallel=&quot;tests&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;FrameworkRevision.TestComponents.Listeners2&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;chrome&quot;&gt;
+  &lt;test thread-count=&quot;3&quot; parallel=&quot;tests&quot; name=&quot;chrome&quot;&gt;
     &lt;parameter name=&quot;browserType&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;FrameworkRevision.Tests.SubmitOrdersGrid&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- chrome --&gt;
-  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;edge&quot;&gt;
+  &lt;test thread-count=&quot;3&quot; parallel=&quot;tests&quot; name=&quot;edge&quot;&gt;
     &lt;parameter name=&quot;browserType&quot; value=&quot;edge&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;FrameworkRevision.Tests.SubmitOrdersGrid&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- edge --&gt;
-  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;firefox&quot;&gt;
+  &lt;test thread-count=&quot;3&quot; parallel=&quot;tests&quot; name=&quot;firefox&quot;&gt;
     &lt;parameter name=&quot;browserType&quot; value=&quot;firefox&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;FrameworkRevision.Tests.SubmitOrdersGrid&quot;/&gt;
@@ -265,20 +262,20 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'parallelTest')
 data.setCell(0, 2, 'FrameworkRevision.Tests.SubmitOrdersGrid')
-data.setCell(0, 3, 10058);
+data.setCell(0, 3, 29);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'parallelTest')
 data.setCell(1, 2, 'FrameworkRevision.Tests.SubmitOrdersGrid')
-data.setCell(1, 3, 5614);
+data.setCell(1, 3, 18);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'parallelTest')
 data.setCell(2, 2, 'FrameworkRevision.Tests.SubmitOrdersGrid')
-data.setCell(2, 3, 5520);
+data.setCell(2, 3, 1);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 7 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -305,24 +302,48 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">FrameworkRevision.Tests.SubmitOrdersGrid</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">parallelTest(chrome)</span>
+              <div class="configuration-method before">
+                <span class="method-name">launchApp(chrome)</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">parallelTest(edge)</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApp(edge)</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApp(firefox)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">parallelTest</span>
+                <span class="method-start">4182 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">parallelTest(firefox)</span>
-                <span class="method-start">1 ms</span>
+                <span class="method-name">parallelTest</span>
+                <span class="method-start">4193 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">4663 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">5091 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">parallelTest</span>
+                <span class="method-start">6487 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">6611 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

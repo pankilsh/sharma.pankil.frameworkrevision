@@ -1,6 +1,9 @@
 package FrameworkRevision.TestComponents;
 
-import org.openqa.selenium.WebDriver;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -10,45 +13,54 @@ import com.aventstack.extentreports.ExtentTest;
 
 import resources.TestUtils;
 
-public class Listeners extends BaseTest implements ITestListener{
-	
-	WebDriver driver;
-	ExtentReports extent = ExtentReportsNG.getReportInstance();
-	ExtentTest test;
+public class Listeners extends BaseTest implements ITestListener {
+
+	private ExtentReports extent = ExtentReportsNG.getReportInstance();
 	private static ThreadLocal<ExtentTest> threadTest = new ThreadLocal<ExtentTest>();
+
+	public String getBrowserName() {
+		return ((RemoteWebDriver) getDriver()).getCapabilities().getBrowserName();
+	}
 	
+	public ExtentTest getTestInstance() {
+		return threadTest.get();
+	}
+
 	@Override
 	public void onTestStart(ITestResult result) {
-		
+
 		ITestListener.super.onTestStart(result);
-		
-		test = extent.createTest(result.getMethod().getMethodName());
+		ExtentTest test = extent.createTest(result.getMethod().getMethodName());
 		threadTest.set(test);
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		// TODO Auto-generated method stub
 		ITestListener.super.onTestSuccess(result);
+		
+		getTestInstance().pass("This test is passed");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		
+
 		ITestListener.super.onTestFailure(result);
-		
-		threadTest.get().fail(result.getThrowable());
+
+		getTestInstance().fail(result.getThrowable());
 
 		// try {
-		// driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
+		// driver = (WebDriver)
+		// result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
 		// } catch (Exception e) {
 		// e.printStackTrace();
 		// }
 
-		driver = getDriver();
-		
+		String methodName = result.getMethod().getMethodName();
+		String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("ddMMyy_hhmmss"));
+		String fileName = String.format("%s_%s_%s.png", getBrowserName(), methodName, timeStamp);
+
 		try {
-			threadTest.get().addScreenCaptureFromPath(TestUtils.getScreenshotAt(driver, result.getMethod().getMethodName()));
+			getTestInstance().addScreenCaptureFromPath(TestUtils.getScreenshotAt(getDriver(), fileName));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -56,7 +68,7 @@ public class Listeners extends BaseTest implements ITestListener{
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		threadTest.get().skip(result.getThrowable());
+		getTestInstance().skip(result.getThrowable());
 		ITestListener.super.onTestSkipped(result);
 	}
 
@@ -80,7 +92,7 @@ public class Listeners extends BaseTest implements ITestListener{
 
 	@Override
 	public void onFinish(ITestContext context) {
-		
+
 		ITestListener.super.onFinish(context);
 		extent.flush();
 	}

@@ -29,13 +29,16 @@ import resources.TestUtils;
 public class BaseTest {
 
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
-	public LandingPage landingPage;
+	
 	private static final String BROWSER_KEY = "browser";
 	private static final String PROXY_KEY = "proxy";
 	private static final String PROXY_NEEDED_KEY = "proxyNeeded";
 	private static final String URL_KEY = "url";
 	private static final String GLOBAL_PROPERTY = "GlobalData";
-
+	private static final String downloadFilePath = TestUtils.userDir + File.separator + "downloads";
+	
+	public LandingPage landingPage;
+	
 	public WebDriver initializeDriver() throws FileNotFoundException, IOException {
 
 		WebDriver localDriver;
@@ -45,9 +48,7 @@ public class BaseTest {
 		browser = browser.toLowerCase();
 		boolean isHeadless = browser.contains("headless");
 		boolean isIncongnito = browser.contains("incognito");
-
-		String downloadFilePath = TestUtils.userDir + File.separator + "downloads";
-
+		
 		HashMap<String, Object> prefs = new HashMap<String, Object>();
 		prefs.put("download.default_directory", downloadFilePath);
 		prefs.put("download.prompt_for_download", false);
@@ -96,7 +97,7 @@ public class BaseTest {
 		getDriver().quit();
 	}
 
-	public WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		return driver.get();
 	}
 

@@ -12,6 +12,11 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import FrameworkRevision.PageObjects.LandingPage;
 
@@ -19,10 +24,6 @@ public class BaseTestGrid {
 
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	LandingPage landingPage;
-
-	public enum BrowserType {
-		chrome, edge, firefox
-	}
 
 	public void initializeGridDriver(String browserType) throws MalformedURLException, URISyntaxException {
 		WebDriver localdriver;
@@ -64,14 +65,20 @@ public class BaseTestGrid {
 		driver.set(localDriver);
 	}
 
+	@BeforeMethod
+	@Parameters({"browserType"})
 	public void launchApp(String browserType) throws InterruptedException, MalformedURLException, URISyntaxException {
 		initializeDriver(browserType);
 		getDriver().get("https://www.google.com");
-		getDriver().quit();
 	}
 	
-	public WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		return driver.get();
+	}
+	
+	@AfterMethod
+	public void tearDown() {
+		getDriver().quit();
 	}
 
 }

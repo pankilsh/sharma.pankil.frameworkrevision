@@ -1,7 +1,11 @@
 package FrameworkRevision.TestComponents;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -12,24 +16,29 @@ import com.aventstack.extentreports.Status;
 
 import resources.TestUtils;
 
-public class Listeners2 extends BaseTestGrid implements ITestListener{
-	
+public class Listeners2 implements ITestListener {
+
 	WebDriver driver;
 	ExtentReports extent = ExtentReportsNG.getReportInstance();
 	ExtentTest localTest;
 	private static ThreadLocal<ExtentTest> test = new ThreadLocal<ExtentTest>();
-	
+
 	@Override
 	public void onTestStart(ITestResult result) {
-		
+
 		ITestListener.super.onTestStart(result);
-		
-		localTest = extent.createTest(result.getMethod().getMethodName() + " on " + result.getTestContext().getName());
+		String testName = result.getMethod().getMethodName() + " on "+ getBrowserName();
+		localTest = extent.createTest(testName);
 		test.set(localTest);
 	}
-	
-	public ExtentTest getTest() {
+
+	public ExtentTest getTestInstance() {
 		return test.get();
+	}
+
+	public String getBrowserName() {
+		String browserName = ((RemoteWebDriver) BaseTestGrid.getDriver()).getCapabilities().getBrowserName();
+		return browserName;
 	}
 
 	@Override
@@ -40,15 +49,15 @@ public class Listeners2 extends BaseTestGrid implements ITestListener{
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		
+
 		ITestListener.super.onTestFailure(result);
-		
-		getTest().assignAuthor("Pankil");
-		getTest().info(result.getTestContext().getName());
-		getTest().warning("Warning Example");
-		getTest().assignCategory("Category");
-		getTest().log(Status.FAIL, "The test is failed");
-		getTest().fail(result.getThrowable());
+
+		getTestInstance().assignAuthor("Pankil");
+		getTestInstance().info(result.getTestContext().getName().toUpperCase());
+		getTestInstance().warning("Warning Example");
+		getTestInstance().assignCategory("Category");
+		getTestInstance().log(Status.FAIL, "The test is failed");
+		getTestInstance().fail(result.getThrowable());
 
 		/*
 		 * try { driver = (WebDriver)
@@ -56,24 +65,24 @@ public class Listeners2 extends BaseTestGrid implements ITestListener{
 		 * getInstance()); } catch (Exception e) { e.printStackTrace(); }
 		 */
 
-		driver = getDriver();
-		 
-		 if(driver instanceof TakesScreenshot) {
-			 
-			 try {
-				 getTest().addScreenCaptureFromPath(TestUtils.getScreenshotAt(driver, result.getMethod().getMethodName()));
-				} catch (Exception e) {
-					
-					e.printStackTrace();
-				}
-		 }
-		
-		
+		driver = BaseTestGrid.getDriver();
+
+		String methodName = result.getMethod().getMethodName();
+		String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("ddMMyy_hhmmss"));
+		String fileName = String.format("%s_%s_%s.png", getBrowserName(), methodName, timestamp).toLowerCase();
+
+		try {
+			getTestInstance().addScreenCaptureFromPath(TestUtils.getScreenshotAt(driver, fileName));
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		getTest().skip(result.getThrowable());
+		getTestInstance().skip(result.getThrowable());
 		ITestListener.super.onTestSkipped(result);
 	}
 
@@ -97,7 +106,7 @@ public class Listeners2 extends BaseTestGrid implements ITestListener{
 
 	@Override
 	public void onFinish(ITestContext context) {
-		
+
 		ITestListener.super.onFinish(context);
 		extent.flush();
 	}

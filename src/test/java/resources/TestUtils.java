@@ -175,14 +175,13 @@ public class TestUtils {
 	 * screenshots directory.
 	 *
 	 * @param driver   active WebDriver instance that supports screenshots
-	 * @param testName base name to use for the screenshot file (a .png will be
-	 *                 appended)
+	 * @param testName base name to use for the screenshot file (with extension)
 	 * @return absolute path to the saved screenshot file
 	 * @throws IOException if writing the file fails
 	 */
-	public static String getScreenshotAt(WebDriver driver, String testName) throws IOException {
+	public static String getScreenshotAt(WebDriver driver, String fileName) throws IOException {
 		TakesScreenshot ts = (TakesScreenshot) driver;
-		String screenshotFilePath = userDir + File.separator + "screenshots" + File.separator + testName + ".png";
+		String screenshotFilePath = userDir + File.separator + "screenshots" + File.separator + fileName;
 
 		// Capture the screenshot and copy to destination
 		File source = ts.getScreenshotAs(OutputType.FILE);
@@ -272,5 +271,6 @@ public class TestUtils {
 
 		return data;
 	}
+	
 
 }

@@ -18,9 +18,7 @@ import FrameworkRevision.TestComponents.BaseTestGrid;
 public class SubmitOrdersGrid extends BaseTestGrid {
 	
 	@Test
-	@Parameters({"browserType"})
-	public void parallelTest(String browserType) throws InterruptedException, MalformedURLException, URISyntaxException {
-		launchApp(browserType);
+	public void parallelTest() throws InterruptedException, MalformedURLException, URISyntaxException {
 		Assert.assertTrue(false);
 		}
 
