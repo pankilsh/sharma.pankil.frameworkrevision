@@ -3,6 +3,10 @@ package FrameworkRevision.TestComponents;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.HashMap;
 
@@ -15,6 +19,8 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -86,6 +92,20 @@ public class BaseTest {
 
 	}
 
+	public void initializeGridDriver(String browserType) throws MalformedURLException, URISyntaxException {
+		WebDriver localdriver;
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setAcceptInsecureCerts(true);
+		capabilities.setBrowserName(browserType.toLowerCase());
+
+		URL hubIp = new URI("http://192.168.1.41:4444").toURL();
+
+		localdriver = new RemoteWebDriver(capabilities);
+		localdriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		localdriver.manage().window().maximize();
+		driver.set(localdriver);
+	}
+	
 	@BeforeMethod
 	@Parameters({"browserType"})
 	public LandingPage launchApplication(@Optional("default") String browserType) throws FileNotFoundException, IOException {
@@ -142,5 +162,12 @@ public class BaseTest {
 		return options;
 	}
 	
+	public String getTitleOfPage() {
+		return getDriver().getTitle();
+	}
+
+	public String getCurrentURL() {
+		return getDriver().getCurrentUrl();
+	}
 
 }

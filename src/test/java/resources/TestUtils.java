@@ -54,6 +54,14 @@ public class TestUtils {
 
 	// Base directory for resolving relative resource paths (project root)
 	public static final String userDir = System.getProperty("user.dir");
+	
+	public Object convertListToObject(List<HashMap<String, Object>> data) {
+		Object[][] object = new Object[data.size()][1];
+		for(int i = 0; i<data.size();i++) {
+			object[i][0] = data.get(i);
+		}
+		return object;
+	}
 
 	/**
 	 * Read a JSON file in the resources folder and parse it as a List of maps.
@@ -180,11 +188,11 @@ public class TestUtils {
 	 * @throws IOException if writing the file fails
 	 */
 	public static String getScreenshotAt(WebDriver driver, String fileName) throws IOException {
-		TakesScreenshot ts = (TakesScreenshot) driver;
+		//TakesScreenshot ts = (TakesScreenshot) driver;
 		String screenshotFilePath = userDir + File.separator + "screenshots" + File.separator + fileName;
 
 		// Capture the screenshot and copy to destination
-		File source = ts.getScreenshotAs(OutputType.FILE);
+		File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		File destination = new File(screenshotFilePath);
 		FileUtils.copyFile(source, destination);
 		return screenshotFilePath;

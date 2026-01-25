@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="FrameworkRevision.Tests.LoginTest">
+      <class name="cucumber.testrunner.TestRunner">
         <methods>
-          <include name="tearDown"/>
-          <include name="loginToApp"/>
-          <include name="getTestName"/>
-          <include name="launchApplication"/>
-          <include name="getClassName"/>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0 1 2"/>
+          <include name="tearDownClass"/>
         </methods>
-      </class> <!-- FrameworkRevision.Tests.LoginTest -->
+      </class> <!-- cucumber.testrunner.TestRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

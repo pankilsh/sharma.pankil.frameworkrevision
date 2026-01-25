@@ -1,46 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="3" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="FrameworkRevision.TestComponents.Listeners"/>
-  </listeners>
-  <test thread-count="3" parallel="tests" name="edge(failed)">
-    <parameter name="browserType" value="edge"/>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="FrameworkRevision.Tests.SubmitOrders">
+      <class name="cucumber.testrunner.TestRunner">
         <methods>
-          <include name="testOne"/>
-          <include name="tearDown"/>
-          <include name="launchApplication"/>
-          <include name="parallelTest"/>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0 1 2"/>
+          <include name="tearDownClass"/>
         </methods>
-      </class> <!-- FrameworkRevision.Tests.SubmitOrders -->
+      </class> <!-- cucumber.testrunner.TestRunner -->
     </classes>
-  </test> <!-- edge(failed) -->
-  <test thread-count="3" parallel="tests" name="chrome(failed)">
-    <parameter name="browserType" value="chrome"/>
-    <classes>
-      <class name="FrameworkRevision.Tests.SubmitOrders">
-        <methods>
-          <include name="testOne"/>
-          <include name="tearDown"/>
-          <include name="launchApplication"/>
-          <include name="parallelTest"/>
-        </methods>
-      </class> <!-- FrameworkRevision.Tests.SubmitOrders -->
-    </classes>
-  </test> <!-- chrome(failed) -->
-  <test thread-count="3" parallel="tests" name="firefox(failed)">
-    <parameter name="browserType" value="firefox"/>
-    <classes>
-      <class name="FrameworkRevision.Tests.SubmitOrders">
-        <methods>
-          <include name="testOne"/>
-          <include name="tearDown"/>
-          <include name="launchApplication"/>
-          <include name="parallelTest"/>
-        </methods>
-      </class> <!-- FrameworkRevision.Tests.SubmitOrders -->
-    </classes>
-  </test> <!-- firefox(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

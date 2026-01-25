@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
