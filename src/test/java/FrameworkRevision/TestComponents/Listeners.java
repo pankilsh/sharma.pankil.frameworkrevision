@@ -44,6 +44,7 @@ public class Listeners extends BaseTest implements ITestListener {
 		getTestInstance().assignAuthor("Pankil");
 		getTestInstance().info(result.getTestContext().getName().toUpperCase());
 		//getTestInstance().assignCategory(result.getTestClass().toString());
+		
 		getTestInstance().pass("This test is passed");
 	}
 
@@ -58,6 +59,7 @@ public class Listeners extends BaseTest implements ITestListener {
 		getTestInstance().assignCategory("Test Category");
 		getTestInstance().log(Status.FAIL, "The test is failed");
 		getTestInstance().fail(result.getThrowable());
+		
 
 		// try {
 		// driver = (WebDriver)

@@ -80,6 +80,11 @@
 			<artifactId>cucumber-testng</artifactId>
 			<version>7.33.0</version>
 		</dependency>
+		<dependency>
+			<groupId>net.masterthought</groupId>
+			<artifactId>cucumber-reporting</artifactId>
+			<version>5.7.5</version>
+		</dependency>
 	</dependencies>
 	<profiles>
 		<profile>

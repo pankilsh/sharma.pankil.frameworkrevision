@@ -1,221 +1,281 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="4" failed="3" skipped="0">
+<testng-results ignored="0" total="7" passed="5" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-25T22:10:22 IST" name="Default suite" finished-at="2026-01-25T22:10:22 IST" duration-ms="608">
+  <suite started-at="2026-01-26T22:21:11 IST" name="Suite" finished-at="2026-01-26T22:21:29 IST" duration-ms="18427">
     <groups>
-      <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.testrunner.TestRunner@305b7c14]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-01-25T22:10:22 IST" name="Default test" finished-at="2026-01-25T22:10:22 IST" duration-ms="608">
-      <class name="cucumber.testrunner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumber.testrunner.TestRunner@305b7c14]" started-at="2026-01-25T22:10:22 IST" name="setUpClass" finished-at="2026-01-25T22:10:22 IST" duration-ms="418" status="PASS">
+    <test started-at="2026-01-26T22:21:11 IST" name="DemoTest" finished-at="2026-01-26T22:21:29 IST" duration-ms="18427">
+      <class name="FrameworkRevision.Tests.SubmitOrders">
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@928763c]" started-at="2026-01-26T22:21:11 IST" name="launchApplication" finished-at="2026-01-26T22:21:17 IST" duration-ms="6081" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@282308c3]]>
+                <![CDATA[default]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.testrunner.TestRunner@305b7c14]" started-at="2026-01-25T22:10:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-01-25T22:10:22 IST" duration-ms="97" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Login to App with invalid credentials on chrome"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Verify Login Funtionality"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="io.cucumber.testng.UndefinedStepException">
+        </test-method> <!-- launchApplication -->
+        <test-method signature="parallelTest()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@928763c]" started-at="2026-01-26T22:21:17 IST" name="parallelTest" finished-at="2026-01-26T22:21:17 IST" duration-ms="8" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[The step 'test this' is undefined.
-You can implement this step using the snippet(s) below:
-
-@Then("test this")
-public void test_this() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-]]>
+              <![CDATA[expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'test this' is undefined.
-You can implement this step using the snippet(s) below:
-
-@Then("test this")
-public void test_this() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-at ✽.test this(file:///C:/Users/PS100160/eclipse-workspace/SeleniumRevision/src/test/java/features/LoginTest.feature:12)
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at FrameworkRevision.Tests.SubmitOrders.parallelTest(SubmitOrders.java:33)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
 ]]>
             </full-stacktrace>
-          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.testrunner.TestRunner@305b7c14]" started-at="2026-01-25T22:10:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-01-25T22:10:22 IST" duration-ms="9" status="FAIL">
+        </test-method> <!-- parallelTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@928763c]" started-at="2026-01-26T22:21:18 IST" name="tearDown" finished-at="2026-01-26T22:21:18 IST" duration-ms="227" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@928763c]" started-at="2026-01-26T22:21:18 IST" name="launchApplication" finished-at="2026-01-26T22:21:22 IST" duration-ms="3874" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Login to App with invalid credentials on chrome"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Verify Login Funtionality"]]>
+                <![CDATA[default]]>
               </value>
             </param>
           </params>
-          <exception class="io.cucumber.testng.UndefinedStepException">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="testOne()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@928763c]" started-at="2026-01-26T22:21:22 IST" name="testOne" finished-at="2026-01-26T22:21:22 IST" duration-ms="1" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[The step 'test this' is undefined.
-You can implement this step using the snippet(s) below:
-
-@Then("test this")
-public void test_this() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-]]>
+              <![CDATA[expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'test this' is undefined.
-You can implement this step using the snippet(s) below:
-
-@Then("test this")
-public void test_this() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-at ✽.test this(file:///C:/Users/PS100160/eclipse-workspace/SeleniumRevision/src/test/java/features/LoginTest.feature:12)
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at FrameworkRevision.Tests.SubmitOrders.testOne(SubmitOrders.java:17)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
 ]]>
             </full-stacktrace>
-          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.testrunner.TestRunner@305b7c14]" started-at="2026-01-25T22:10:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-01-25T22:10:22 IST" duration-ms="11" status="FAIL">
+        </test-method> <!-- testOne -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@928763c]" started-at="2026-01-26T22:21:22 IST" name="tearDown" finished-at="2026-01-26T22:21:23 IST" duration-ms="220" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@928763c]" started-at="2026-01-26T22:21:23 IST" name="launchApplication" finished-at="2026-01-26T22:21:26 IST" duration-ms="3004" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Login to App with invalid credentials on chrome"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Verify Login Funtionality"]]>
+                <![CDATA[default]]>
               </value>
             </param>
           </params>
-          <exception class="io.cucumber.testng.UndefinedStepException">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="testThree()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@928763c]" started-at="2026-01-26T22:21:26 IST" name="testThree" finished-at="2026-01-26T22:21:26 IST" duration-ms="1" status="PASS">
+          <exception class="FrameworkRevision.CustomExceptions.ProductOutOfStockException">
             <message>
-              <![CDATA[The step 'test this' is undefined.
-You can implement this step using the snippet(s) below:
-
-@Then("test this")
-public void test_this() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-]]>
+              <![CDATA[Maal Khatam]]>
             </message>
             <full-stacktrace>
-              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'test this' is undefined.
-You can implement this step using the snippet(s) below:
-
-@Then("test this")
-public void test_this() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-at ✽.test this(file:///C:/Users/PS100160/eclipse-workspace/SeleniumRevision/src/test/java/features/LoginTest.feature:12)
+              <![CDATA[FrameworkRevision.CustomExceptions.ProductOutOfStockException: Maal Khatam
+at FrameworkRevision.Tests.SubmitOrders.testThree(SubmitOrders.java:28)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
 ]]>
             </full-stacktrace>
-          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
+          </exception> <!-- FrameworkRevision.CustomExceptions.ProductOutOfStockException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.testrunner.TestRunner@305b7c14]" started-at="2026-01-25T22:10:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-01-25T22:10:22 IST" duration-ms="7" status="PASS">
+        </test-method> <!-- testThree -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@928763c]" started-at="2026-01-26T22:21:26 IST" name="tearDown" finished-at="2026-01-26T22:21:26 IST" duration-ms="180" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@928763c]" started-at="2026-01-26T22:21:26 IST" name="launchApplication" finished-at="2026-01-26T22:21:29 IST" duration-ms="3185" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Login to App with invalid credentials on edge"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Verify Login Funtionality"]]>
+                <![CDATA[default]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.testrunner.TestRunner@305b7c14]" started-at="2026-01-25T22:10:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-01-25T22:10:22 IST" duration-ms="5" status="PASS">
+        </test-method> <!-- launchApplication -->
+        <test-method signature="testTwo()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@928763c]" started-at="2026-01-26T22:21:29 IST" name="testTwo" finished-at="2026-01-26T22:21:29 IST" duration-ms="1" status="PASS">
+          <exception class="java.lang.ArithmeticException">
+            <message>
+              <![CDATA[/ by zero]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.ArithmeticException: / by zero
+at FrameworkRevision.Tests.SubmitOrders.testTwo(SubmitOrders.java:22)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ArithmeticException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTwo -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.SubmitOrders@928763c]" started-at="2026-01-26T22:21:29 IST" name="tearDown" finished-at="2026-01-26T22:21:29 IST" duration-ms="209" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- FrameworkRevision.Tests.SubmitOrders -->
+      <class name="FrameworkRevision.Tests.LoginTest">
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.LoginTest@7d94beb9]" started-at="2026-01-26T22:21:11 IST" name="launchApplication" finished-at="2026-01-26T22:21:17 IST" duration-ms="5655" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Login to App with invalid credentials on edge"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Verify Login Funtionality"]]>
+                <![CDATA[default]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.testrunner.TestRunner@305b7c14]" started-at="2026-01-25T22:10:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-01-25T22:10:22 IST" duration-ms="5" status="PASS">
+        </test-method> <!-- launchApplication -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.LoginTest@7d94beb9]" started-at="2026-01-26T22:21:11 IST" name="launchApplication" finished-at="2026-01-26T22:21:17 IST" duration-ms="6238" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Login to App with invalid credentials on edge"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Verify Login Funtionality"]]>
+                <![CDATA[default]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.testrunner.TestRunner@305b7c14]" started-at="2026-01-25T22:10:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-01-25T22:10:22 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- launchApplication -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:FrameworkRevision.Tests.LoginTest@7d94beb9]" started-at="2026-01-26T22:21:11 IST" name="launchApplication" finished-at="2026-01-26T22:21:21 IST" duration-ms="9588" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[""]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Verify Login Funtionality"]]>
+                <![CDATA[default]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumber.testrunner.TestRunner@305b7c14]" started-at="2026-01-25T22:10:22 IST" name="tearDownClass" finished-at="2026-01-25T22:10:22 IST" duration-ms="17" status="PASS">
+        </test-method> <!-- launchApplication -->
+        <test-method signature="loginToApp(java.util.HashMap)[pri:0, instance:FrameworkRevision.Tests.LoginTest@7d94beb9]" started-at="2026-01-26T22:21:17 IST" name="loginToApp" data-provider="loginDetails" finished-at="2026-01-26T22:21:17 IST" duration-ms="303" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{userId=pankil@gmail.com, userPassword=pass@12345}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- cucumber.testrunner.TestRunner -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- loginToApp -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.LoginTest@7d94beb9]" started-at="2026-01-26T22:21:17 IST" name="tearDown" finished-at="2026-01-26T22:21:17 IST" duration-ms="247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="loginToApp(java.util.HashMap)[pri:0, instance:FrameworkRevision.Tests.LoginTest@7d94beb9]" started-at="2026-01-26T22:21:17 IST" name="loginToApp" data-provider="loginDetails" finished-at="2026-01-26T22:21:18 IST" duration-ms="258" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{userId=pankil@gmail.com, userPassword=Pass@12345}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToApp -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.LoginTest@7d94beb9]" started-at="2026-01-26T22:21:18 IST" name="tearDown" finished-at="2026-01-26T22:21:18 IST" duration-ms="241" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="loginToApp(java.util.HashMap)[pri:0, instance:FrameworkRevision.Tests.LoginTest@7d94beb9]" started-at="2026-01-26T22:21:21 IST" name="loginToApp" data-provider="loginDetails" finished-at="2026-01-26T22:21:21 IST" duration-ms="227" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{userId=pankil@gmail.com, userPassword=Pass@1234}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToApp -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FrameworkRevision.Tests.LoginTest@7d94beb9]" started-at="2026-01-26T22:21:21 IST" name="tearDown" finished-at="2026-01-26T22:21:21 IST" duration-ms="222" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- FrameworkRevision.Tests.LoginTest -->
+    </test> <!-- DemoTest -->
+  </suite> <!-- Suite -->
 </testng-results>

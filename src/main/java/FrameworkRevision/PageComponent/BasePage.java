@@ -43,7 +43,9 @@ public class BasePage {
 		HttpURLConnection connect = (HttpURLConnection) new URI(href).toURL().openConnection();
 		connect.connect();
 		connect.setRequestMethod("HEAD");
-		return connect.getResponseCode() == 200 ? true : false;
+		boolean isLinkBroken = connect.getResponseCode() == 200 ? true : false;
+		connect.disconnect();
+		return isLinkBroken;
 	}
 
 }

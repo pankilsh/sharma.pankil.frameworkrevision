@@ -54,10 +54,10 @@ public class TestUtils {
 
 	// Base directory for resolving relative resource paths (project root)
 	public static final String userDir = System.getProperty("user.dir");
-	
-	public Object convertListToObject(List<HashMap<String, Object>> data) {
+
+	public static Object[][] convertListToObject(List<HashMap<String, Object>> data) {
 		Object[][] object = new Object[data.size()][1];
-		for(int i = 0; i<data.size();i++) {
+		for (int i = 0; i < data.size(); i++) {
 			object[i][0] = data.get(i);
 		}
 		return object;
@@ -71,7 +71,7 @@ public class TestUtils {
 	 * @return parsed content as List<HashMap<String,Object>>
 	 * @throws IOException if the file cannot be read or parsed
 	 */
-	public static Object[][] getDataFromJsonIntoObject(String fileName) throws IOException {
+	public static Object[][] getDataFromJsonToObject(String fileName) throws IOException {
 		List<HashMap<String, Object>> data = new ArrayList<HashMap<String, Object>>();
 		String filePath = userDir + File.separator + "resources" + File.separator + fileName + ".json";
 
@@ -85,15 +85,9 @@ public class TestUtils {
 		data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, Object>>>() {
 		});
 		
-		int i = 0;
-		Object [][] object = new Object[data.size()][1];
-		for(HashMap<String,Object> map : data) {
-			object[i++][0] = map;
-		}
-
-		return object;
+		return convertListToObject(data);
 	}
-
+	
 	/**
 	 * Read an Excel (.xlsx) file and convert rows to a List of maps. Each map
 	 * represents a row where keys come from the first/header row and values from
@@ -105,10 +99,10 @@ public class TestUtils {
 	 * @throws InvalidFormatException if the workbook format is not valid
 	 * @throws IOException            if file I/O fails
 	 */
-	public static List<HashMap<String, String>> getDataFromExcel(String fileName, String sheetName)
+	public static Object[][] getDataFromExcelToObject(String fileName, String sheetName)
 			throws InvalidFormatException, IOException {
 
-		List<HashMap<String, String>> data = new ArrayList<HashMap<String, String>>();
+		List<HashMap<String, Object>> data = new ArrayList<HashMap<String, Object>>();
 		String filePath = userDir + File.separator + "resources" + File.separator + fileName + ".xlsx";
 		File file = new File(filePath);
 
@@ -132,7 +126,7 @@ public class TestUtils {
 		// Ensure the requested sheet exists
 		Assert.assertTrue(sheetFound);
 
-		HashMap<String, String> mapData = new HashMap<String, String>();
+		HashMap<String, Object> mapData = new HashMap<String, Object>();
 		DataFormatter formatter = new DataFormatter();
 
 		// Note: getLastRowNum() returns the index of the last row (0-based).
@@ -158,7 +152,8 @@ public class TestUtils {
 			}
 			data.add(mapData);
 		}
-		return data;
+		
+		return convertListToObject(data);
 	}
 
 	/**
@@ -188,8 +183,11 @@ public class TestUtils {
 	 * @throws IOException if writing the file fails
 	 */
 	public static String getScreenshotAt(WebDriver driver, String fileName) throws IOException {
-		//TakesScreenshot ts = (TakesScreenshot) driver;
+		// TakesScreenshot ts = (TakesScreenshot) driver;
 		String screenshotFilePath = userDir + File.separator + "screenshots" + File.separator + fileName;
+
+		//FileUtils.copyDirectory(((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE),
+		//		new File(screenshotFilePath));
 
 		// Capture the screenshot and copy to destination
 		File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -214,8 +212,7 @@ public class TestUtils {
 
 		ObjectMapper mapper = new ObjectMapper();
 
-		map = mapper.readValue(jsonContent, new TypeReference<HashMap<String, String>>() {
-		});
+		map = mapper.readValue(jsonContent, new TypeReference<HashMap<String, String>>() {});
 
 		return map.get(key);
 
@@ -238,10 +235,10 @@ public class TestUtils {
 	 * @throws IOException  when properties file cannot be read
 	 * @throws SQLException when JDBC operations fail
 	 */
-	public static List<HashMap<String, String>> getDataFromDB(String dbName, String dbTable)
+	public static Object[][] getDataFromDB(String dbName, String dbTable)
 			throws IOException, SQLException {
-		List<HashMap<String, String>> data = new ArrayList<HashMap<String, String>>();
-		HashMap<String, String> mapData = new HashMap<String, String>();
+		List<HashMap<String, Object>> data = new ArrayList<HashMap<String, Object>>();
+		HashMap<String, Object> mapData = new HashMap<String, Object>();
 
 		// Read DB connection parameters from properties file
 		String dbHost = getDataFromProperties("DBGlobalProperties", "dbHost");
@@ -257,7 +254,7 @@ public class TestUtils {
 		Connection connection = DriverManager.getConnection(dbURL, dbUser, dbPassword);
 		Statement statement = connection.createStatement();
 		ResultSet result = statement.executeQuery(query);
-
+		//int rowsAffected = statement.executeUpdate(updateQuery);
 		// Collect column names from result metadata
 		List<String> columnNames = new ArrayList<String>();
 		int columnCount = result.getMetaData().getColumnCount();
@@ -277,8 +274,7 @@ public class TestUtils {
 		statement.close();
 		connection.close();
 
-		return data;
+		return convertListToObject(data);
 	}
-	
 
 }
